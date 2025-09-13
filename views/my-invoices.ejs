@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Invoices</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="page page-invoices">
+    <main class="container">
+      <h2>My Invoices</h2>
+      <% if (invoices.length === 0) { %>
+        <p>No invoices.</p>
+      <% } %>
+      <ul class="invoices">
+        <% invoices.forEach(inv => { %>
+          <li class="invoice">
+            <div>
+              <strong class="inv-title"><%= inv.title %></strong>
+              <span class="inv-id">ID: <%= inv.id %></span>
+            </div>
+            <div><a class="link" href="/invoice/<%= inv.id %>">View</a></div>
+          </li>
+        <% }) %>
+      </ul>
+      <p><a class="link" href="/">Home</a></p>
+    </main>
+  </body>
+</html>
