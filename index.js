@@ -30,6 +30,7 @@ const users = [
 
 // invoices: id is sequential and predictable (intentional)
 const invoices = [
+  { id: -1,  ownerUserId: 2, title: 'Bob - Invoice #3',     notes: 'flag{xakack12}' }, // <-- FLAG here
   { id: 1,  ownerUserId: 1, title: 'Alice - Invoice #1',    notes: 'Consulting services - paid.' },
   { id: 2,  ownerUserId: 1, title: 'Alice - Invoice #2',    notes: 'Travel reimbursement.' },
   { id: 3,  ownerUserId: 2, title: 'Bob - Invoice #1',      notes: 'Monthly subscription.' },
@@ -38,7 +39,7 @@ const invoices = [
   { id: 6,  ownerUserId: 4, title: 'Dave - Invoice #1',     notes: 'Hardware purchase.' },
   { id: 7,  ownerUserId: 5, title: 'Eve - Invoice #1',      notes: 'Consultation follow-up.' },
   { id: 8,  ownerUserId: 1, title: 'Alice - Invoice #3',    notes: 'Additional hours.' },
-  { id: 9,  ownerUserId: 2, title: 'Bob - Invoice #3',      notes: 'flag{xakack12}' }, // <-- FLAG here
+  { id: 9,  ownerUserId: 2, title: 'Bob - Invoice #3',      notes: 'Maintenance contract.' },
   { id: 10, ownerUserId: 3, title: 'Carol - Invoice #2',    notes: 'Refund processed.' },
   { id: 11, ownerUserId: 4, title: 'Dave - Invoice #2',     notes: 'Maintenance contract.' },
   { id: 12, ownerUserId: 5, title: 'Eve - Invoice #2',      notes: 'Quarterly review.' },
@@ -118,3 +119,4 @@ app.get('/api/max-invoice', requireAuth, (req, res) => {
 
 const port = PORT;
 app.listen(port, () => console.log(`CTF IDOR app running on http://localhost:${port}`));
+
